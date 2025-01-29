@@ -6,7 +6,7 @@ class PokeAPI():
     Methods
     ---
     """
-    def __init__(self, pokemons:int=300):
+    def __init__(self, pokemons:int=3):
         """
         Class initialized by the following function
         Params: pokemons ([Not Required] int, default = 300)
@@ -17,6 +17,7 @@ class PokeAPI():
         self.url = "https://pokeapi.co/api/v2/pokemon/{}/"
         self.pokemons = pokemons
         self.params = {'limit': self.pokemons}
+
     def establish_connection(self):
         """
         Class Method
@@ -36,6 +37,7 @@ class PokeAPI():
                     self.data.append(data)
         except Exception as error:
             print("ERROR: {}".format(error))
+
     def read_file_pokeapi(self):
         """
         Class Method
@@ -44,7 +46,7 @@ class PokeAPI():
         """
         try:
             dir_path = os.path.dirname(os.path.realpath(__file__))
-            self.filename = dir_path + "\\result\\pokeapi.json"
+            self.filename = os.path.join(dir_path, "pokeapi.json")
             print(self.filename)
             with open(self.filename, "w") as file:
                 json_object = json.dumps(self.data, indent=4)
