@@ -12,9 +12,4 @@ def test_build():
     print("Starting request to URL: {}\n".format(url.format(number)))
     params['offset'] = number
     response = requests.get(url=url.format(number), params=params)
-    if response.status_code != 200: 
-        print(response.text)
-    else:
-        data = response.json()
-        print(data["name"])
-        data.append(data)
+    assert response.status_code == 200
