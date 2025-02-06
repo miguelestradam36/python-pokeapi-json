@@ -4,9 +4,11 @@ Python script connector *[GET]* to Pokemon API.
 
     Python Script to generate JSON file with the information stored of all pokemons
 
-## Automate the scripting
+!["Pokemon Logo"](img/pokemon_logo.png)
 
-![](docs/img/gnu-make.webp)
+## On the other hand
+
+You can automate the execution of the python file by using 
 
 ### Use MAKE GNU
 
